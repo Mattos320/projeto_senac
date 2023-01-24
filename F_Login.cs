@@ -54,7 +54,40 @@ namespace ProjetoEscola2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string username = textBox1.Text;
+            string senha = textBox2.Text;
 
+            if (username == "" || senha == "")
+            {
+                MessageBox.Show("Preencha todos os campos");
+                textBox1.Focus();
+                return;
+            }
+            // fim do IF
+
+            string sql = "SELECT * FROM tb_usuario WHERE username_usuario='"+username+"' AND senha_usuario'"+senha+"'";
+            dt = Banco.ConsultaSql(sql);
+            if (dt.Rows.Count == 1)
+            {
+                F_login.label2.Text = dt.Rows[0].ItemArray[0].ToString();
+                F_login.lb_Usuario.Text = dt.Rows[0].Field<string>("username_usuario");
+                F_login.pb_login.Image = Properties.Resources.bverde;
+
+                Globais.nivel = int.Parse(dt.Rows[0].Field<Int64>("nivel_usuario").ToString());
+                Globais.logado = true;
+                this.Close();
+            }
+
+            else
+            {
+                MessageBox.Show("Usuário ou Senha incorretos");
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

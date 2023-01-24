@@ -42,5 +42,10 @@ namespace ProjetoEscola2
         {
 
         }
+
+        private void lb_Usuario_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

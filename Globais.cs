@@ -17,5 +17,6 @@ namespace ProjetoEscola2
         public static string caminho = System.Environment.CurrentDirectory;
         public static string nomeBanco = "bd_escola.db";
         public static string caminhoBanco = caminho + "\\bd\\" + nomeBanco;
+        
     }
 }
