@@ -42,12 +42,11 @@
             this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lb_Nivel = new System.Windows.Forms.Label();
-            this.pb_login = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lb_Usuario = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.pb_login = new System.Windows.Forms.PictureBox();
             this.tools.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_login)).BeginInit();
@@ -104,24 +103,25 @@
             // novoToolStripMenuItem
             // 
             this.novoToolStripMenuItem.Name = "novoToolStripMenuItem";
-            this.novoToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.novoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.novoToolStripMenuItem.Text = "Novo";
+            this.novoToolStripMenuItem.Click += new System.EventHandler(this.novoToolStripMenuItem_Click);
             // 
             // gerenciamentoToolStripMenuItem
             // 
             this.gerenciamentoToolStripMenuItem.Name = "gerenciamentoToolStripMenuItem";
-            this.gerenciamentoToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.gerenciamentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gerenciamentoToolStripMenuItem.Text = "Gerenciamento";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
             // 
             // visualizarToolStripMenuItem
             // 
             this.visualizarToolStripMenuItem.Name = "visualizarToolStripMenuItem";
-            this.visualizarToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.visualizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.visualizarToolStripMenuItem.Text = "Visualizar";
             // 
             // alunosToolStripMenuItem
@@ -156,7 +156,6 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.lb_Nivel);
             this.panel1.Controls.Add(this.pb_login);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
@@ -167,30 +166,19 @@
             this.panel1.Size = new System.Drawing.Size(858, 94);
             this.panel1.TabIndex = 1;
             // 
-            // lb_Nivel
+            // label2
             // 
-            this.lb_Nivel.AutoSize = true;
-            this.lb_Nivel.Location = new System.Drawing.Point(192, 70);
-            this.lb_Nivel.Name = "lb_Nivel";
-            this.lb_Nivel.Size = new System.Drawing.Size(35, 13);
-            this.lb_Nivel.TabIndex = 5;
-            this.lb_Nivel.Text = "label4";
-            // 
-            // pb_login
-            // 
-            this.pb_login.Image = global::ProjetoEscola2.Properties.Resources.bvermelha;
-            this.pb_login.Location = new System.Drawing.Point(3, 66);
-            this.pb_login.Name = "pb_login";
-            this.pb_login.Size = new System.Drawing.Size(25, 25);
-            this.pb_login.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_login.TabIndex = 0;
-            this.pb_login.TabStop = false;
-            this.pb_login.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(833, 72);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(13, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "--";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(131, 70);
+            this.label3.Location = new System.Drawing.Point(791, 72);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 4;
@@ -216,14 +204,16 @@
             this.lb_Usuario.Text = "--";
             this.lb_Usuario.Click += new System.EventHandler(this.lb_Usuario_Click);
             // 
-            // label2
+            // pb_login
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(173, 70);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(13, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "--";
+            this.pb_login.Image = global::ProjetoEscola2.Properties.Resources.bvermelha;
+            this.pb_login.Location = new System.Drawing.Point(3, 66);
+            this.pb_login.Name = "pb_login";
+            this.pb_login.Size = new System.Drawing.Size(25, 25);
+            this.pb_login.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_login.TabIndex = 0;
+            this.pb_login.TabStop = false;
+            this.pb_login.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // F_escola
             // 
@@ -234,6 +224,7 @@
             this.Controls.Add(this.tools);
             this.MainMenuStrip = this.tools;
             this.Name = "F_escola";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.tools.ResumeLayout(false);
             this.tools.PerformLayout();
@@ -261,7 +252,6 @@
         private System.Windows.Forms.ToolStripMenuItem cursosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem novoToolStripMenuItem1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lb_Nivel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label lb_Usuario;

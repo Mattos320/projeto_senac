@@ -65,7 +65,9 @@ namespace ProjetoEscola2
             }
             // fim do IF
 
-            string sql = "SELECT * FROM tb_usuario WHERE username_usuario='"+username+"' AND senha_usuario'"+senha+"'";
+            //string sql = "SELECT * FROM tb_usuario WHERE username_usuario='"+username+"' AND senha_usuario'"+senha+"'";
+              string sql = "SELECT * FROM tb_usuario WHERE username_usuario = '"+username+"' AND senha_usuario = '"+senha+"'";
+
             dt = Banco.ConsultaSql(sql);
             if (dt.Rows.Count == 1)
             {

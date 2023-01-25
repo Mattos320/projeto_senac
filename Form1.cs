@@ -15,6 +15,9 @@ namespace ProjetoEscola2
         public F_escola()
         {
             InitializeComponent();
+            F_Login f_login = new F_Login(this);
+            f_login.ShowDialog();
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -46,6 +49,12 @@ namespace ProjetoEscola2
         private void lb_Usuario_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void novoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_NewUser f_newuser = new F_NewUser(this);
+            f_newuser.ShowDialog();
         }
     }
 }

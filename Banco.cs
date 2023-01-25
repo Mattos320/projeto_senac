@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SQLite;
 using System.Windows.Forms;
 using System.Linq.Expressions;
+using System.Security.Cryptography.X509Certificates;
 
 namespace ProjetoEscola2
 {
@@ -96,12 +97,70 @@ namespace ProjetoEscola2
 
 
         }
+        public static void NovoUser(Usuario user)
+        {
+            if (UsernameExiste(user) == true)
+            {
+                MessageBox.Show("Usuario já existe no sistema");
+                return;
+            }
 
+            try
+            {
+                var vcon = ConectarBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "INSERT INTO tb_usuario (nome_usuario,username_usuario,senha_usuario,status_usuario,nivel_usuario) VALUES (@nome,@username,@senha,@status,@nivel)";
+
+
+                cmd.Parameters.AddWithValue("@nome", user.nome_usuario);
+                cmd.Parameters.AddWithValue("@username", user.username_usuario);
+                cmd.Parameters.AddWithValue("@senha", user.senha_usuario);
+                cmd.Parameters.AddWithValue("@status", user.status_usuario);
+                cmd.Parameters.AddWithValue("@nivel", user.nivel_usuario);
+
+                cmd.ExecuteNonQuery();
+                vcon.Close();
+                MessageBox.Show("Novo usuário adicionado com sucesso");
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao inserir novo usuario .: " + ex.Message);
+                //throw ex;
+            }
+
+            
+    }
+        public static bool UsernameExiste(Usuario user)
+        {
+            bool resposta;
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+
+            var vcon = ConectarBanco();
+            var cmd = vcon.CreateCommand();
+            cmd.CommandText = "SELECT username_usuario FROM tb_usuario WHERE username_usuario='" + user.username_usuario + "'";
+            da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+            da.Fill(dt);
+            if(dt.Rows.Count > 0 )
+            {
+                resposta = true;
+            }
+            else
+            {
+                resposta = false;
+            }
+
+            vcon.Close();
+            return resposta;
+        }
     }
 
-//fim das funções genéricas
+    //fim das funções genéricas
 
-   
+
+
 
 }
 
