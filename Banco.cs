@@ -182,8 +182,36 @@ namespace ProjetoEscola2
                 //throw ex;
             }
         }
+        public static bool ProfessorTelefoneExiste(Professor professor)
+        {
+            bool resposta;
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+
+            var vcon = ConectarBanco();
+            var cmd = vcon.CreateCommand();
+            cmd.CommandText = "SELECT telefone_professor FROM tb_professor WHERE telefone_professor='" + professor.telefone_professor + "'";
+            da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+            da.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                resposta = true;
+            }
+            else
+            {
+                resposta = false;
+            }
+
+            vcon.Close();
+            return resposta;
+        }
         public static void NovoProfessor(Professor professor)
         {
+            if (ProfessorTelefoneExiste(professor) == true)
+            {
+                MessageBox.Show("Número de telefone já existe no sistema");
+                return;
+            }
 
 
             try
@@ -209,12 +237,65 @@ namespace ProjetoEscola2
                 //throw ex;
             }
         }
+        public static bool AlunoTelefoneExiste(Aluno aluno)
+        {
+            bool resposta;
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
 
-        //fim das funções genéricas
+            var vcon = ConectarBanco();
+            var cmd = vcon.CreateCommand();
+            cmd.CommandText = "SELECT telefone_aluno FROM tb_aluno WHERE telefone_aluno='" + aluno.telefone_aluno + "'";
+            da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+            da.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                resposta = true;
+            }
+            else
+            {
+                resposta = false;
+            }
+
+            vcon.Close();
+            return resposta;
+        }
+        public static void NovoAluno(Aluno aluno)
+        {
+            if (AlunoTelefoneExiste(aluno) == true)
+            {
+                MessageBox.Show("Número de telefone já existe no sistema");
+                return;
+            }
+            try
+            {
+                var vcon = ConectarBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "INSERT INTO tb_aluno (nome_aluno,sobrenome_aluno,telefone_aluno) VALUES (@nome,@sobrenome,@telefone)";
+
+
+                cmd.Parameters.AddWithValue("@nome", aluno.nome_aluno);
+                cmd.Parameters.AddWithValue("@sobrenome", aluno.sobrenome_aluno);
+                cmd.Parameters.AddWithValue("@telefone", aluno.telefone_aluno);
+
+                cmd.ExecuteNonQuery();
+                vcon.Close();
+                MessageBox.Show("Novo aluno adicionado com sucesso");
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao inserir novo aluno .: " + ex.Message);
+                //throw ex;
+            }
+
+            //fim das funções genéricas
 
 
 
 
+        }
     }
 }
 

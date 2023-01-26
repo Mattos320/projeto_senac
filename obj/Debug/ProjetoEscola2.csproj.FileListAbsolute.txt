@@ -22,3 +22,4 @@ C:\Users\lucas.smattos1\source\repos\ProjetoEscola2\obj\Debug\ProjetoEscola2.F_e
 C:\Users\lucas.smattos1\source\repos\ProjetoEscola2\obj\Debug\ProjetoEscola2.F_NewUser.resources
 C:\Users\lucas.smattos1\source\repos\ProjetoEscola2\obj\Debug\ProjetoEscola2.F_Curso.resources
 C:\Users\lucas.smattos1\source\repos\ProjetoEscola2\obj\Debug\ProjetoEscola2.F_Professor.resources
+C:\Users\lucas.smattos1\source\repos\ProjetoEscola2\obj\Debug\ProjetoEscola2.F_Aluno.resources

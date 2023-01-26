@@ -47,6 +47,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lb_Usuario = new System.Windows.Forms.Label();
+            this.alunosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.novoToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.tools.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_login)).BeginInit();
@@ -58,7 +60,8 @@
             this.loginToolStripMenuItem,
             this.usuáriosToolStripMenuItem,
             this.alunosToolStripMenuItem,
-            this.cursosToolStripMenuItem});
+            this.cursosToolStripMenuItem,
+            this.alunosToolStripMenuItem1});
             this.tools.Location = new System.Drawing.Point(0, 0);
             this.tools.Name = "tools";
             this.tools.Size = new System.Drawing.Size(858, 24);
@@ -151,7 +154,7 @@
             // novoToolStripMenuItem1
             // 
             this.novoToolStripMenuItem1.Name = "novoToolStripMenuItem1";
-            this.novoToolStripMenuItem1.Size = new System.Drawing.Size(106, 22);
+            this.novoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.novoToolStripMenuItem1.Text = "Novo ";
             this.novoToolStripMenuItem1.Click += new System.EventHandler(this.novoToolStripMenuItem1_Click);
             // 
@@ -218,6 +221,21 @@
             this.lb_Usuario.Text = "--";
             this.lb_Usuario.Click += new System.EventHandler(this.lb_Usuario_Click);
             // 
+            // alunosToolStripMenuItem1
+            // 
+            this.alunosToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.novoToolStripMenuItem3});
+            this.alunosToolStripMenuItem1.Name = "alunosToolStripMenuItem1";
+            this.alunosToolStripMenuItem1.Size = new System.Drawing.Size(56, 20);
+            this.alunosToolStripMenuItem1.Text = "Alunos";
+            // 
+            // novoToolStripMenuItem3
+            // 
+            this.novoToolStripMenuItem3.Name = "novoToolStripMenuItem3";
+            this.novoToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.novoToolStripMenuItem3.Text = "Novo";
+            this.novoToolStripMenuItem3.Click += new System.EventHandler(this.novoToolStripMenuItem3_Click);
+            // 
             // F_escola
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,6 +278,8 @@
         public System.Windows.Forms.Label lb_Usuario;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.PictureBox pb_login;
+        private System.Windows.Forms.ToolStripMenuItem alunosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem novoToolStripMenuItem3;
     }
 }
 

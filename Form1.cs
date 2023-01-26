@@ -73,5 +73,11 @@ namespace ProjetoEscola2
             F_Professor F_professor = new F_Professor(this);
             F_professor.ShowDialog();
         }
+
+        private void novoToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            F_Aluno F_aluno = new F_Aluno(this);
+            F_aluno.ShowDialog();
+        }
     }
 }
