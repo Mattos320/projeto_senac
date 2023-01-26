@@ -31,7 +31,7 @@
             this.tb_nome = new System.Windows.Forms.TextBox();
             this.tb_username = new System.Windows.Forms.TextBox();
             this.tb_senha = new System.Windows.Forms.TextBox();
-            this.bt_novo = new System.Windows.Forms.Button();
+            this.bt_limpar = new System.Windows.Forms.Button();
             this.bt_salvar = new System.Windows.Forms.Button();
             this.bt_fechar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -70,14 +70,15 @@
             this.tb_senha.Size = new System.Drawing.Size(416, 24);
             this.tb_senha.TabIndex = 2;
             // 
-            // bt_novo
+            // bt_limpar
             // 
-            this.bt_novo.Location = new System.Drawing.Point(15, 323);
-            this.bt_novo.Name = "bt_novo";
-            this.bt_novo.Size = new System.Drawing.Size(98, 34);
-            this.bt_novo.TabIndex = 5;
-            this.bt_novo.Text = "Novo";
-            this.bt_novo.UseVisualStyleBackColor = true;
+            this.bt_limpar.Location = new System.Drawing.Point(15, 323);
+            this.bt_limpar.Name = "bt_limpar";
+            this.bt_limpar.Size = new System.Drawing.Size(98, 34);
+            this.bt_limpar.TabIndex = 5;
+            this.bt_limpar.Text = "Limpar";
+            this.bt_limpar.UseVisualStyleBackColor = true;
+            this.bt_limpar.Click += new System.EventHandler(this.bt_novo_Click);
             // 
             // bt_salvar
             // 
@@ -171,6 +172,7 @@
             this.num_nivel.Name = "num_nivel";
             this.num_nivel.Size = new System.Drawing.Size(100, 20);
             this.num_nivel.TabIndex = 15;
+            this.num_nivel.ValueChanged += new System.EventHandler(this.num_nivel_ValueChanged);
             // 
             // F_NewUser
             // 
@@ -187,7 +189,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bt_fechar);
             this.Controls.Add(this.bt_salvar);
-            this.Controls.Add(this.bt_novo);
+            this.Controls.Add(this.bt_limpar);
             this.Controls.Add(this.tb_senha);
             this.Controls.Add(this.tb_username);
             this.Controls.Add(this.tb_nome);
@@ -208,7 +210,7 @@
         private System.Windows.Forms.TextBox tb_nome;
         private System.Windows.Forms.TextBox tb_username;
         private System.Windows.Forms.TextBox tb_senha;
-        private System.Windows.Forms.Button bt_novo;
+        private System.Windows.Forms.Button bt_limpar;
         private System.Windows.Forms.Button bt_salvar;
         private System.Windows.Forms.Button bt_fechar;
         private System.Windows.Forms.Label label1;

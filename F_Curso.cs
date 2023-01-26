@@ -1,0 +1,45 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace ProjetoEscola2
+{
+    public partial class F_Curso: Form
+    {
+        F_escola F_curso;
+        DataTable dt = new DataTable();
+
+        public F_Curso(F_escola f)
+        {
+            InitializeComponent();
+            F_curso = f;
+        }
+
+        private void bt_fechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void bt_novo_Click(object sender, EventArgs e)
+        {
+            tb_curso.Text = "";
+            tb_acurso.Text = "";
+            cb_status.Text = "";
+        }
+
+        private void bt_salvar_Click(object sender, EventArgs e)
+        {
+            Curso curso = new Curso();
+            curso.nome_curso = tb_curso.Text;
+            curso.area_curso = tb_curso.Text;
+            curso.status_curso = cb_status.Text;
+            Banco.NovoCurso(curso);
+        }
+    }
+}

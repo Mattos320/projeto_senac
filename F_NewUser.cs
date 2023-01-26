@@ -49,5 +49,19 @@ namespace ProjetoEscola2
         {
 
         }
+
+        private void bt_novo_Click(object sender, EventArgs e)
+        {
+            tb_nome.Text = "";
+            tb_username.Text = "";
+            tb_senha.Text = "";
+            cb_status.Text = "";
+            num_nivel.Text = "";
+        }
+
+        private void num_nivel_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

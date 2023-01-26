@@ -155,6 +155,33 @@ namespace ProjetoEscola2
             vcon.Close();
             return resposta;
         }
+        public static void NovoCurso(Curso curso)
+        {
+
+
+            try
+            {
+                var vcon = ConectarBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "INSERT INTO tb_curso (nome_curso,area_curso,status_curso) VALUES (@nome,@area,@status)";
+
+
+                cmd.Parameters.AddWithValue("@nome", curso.nome_curso);
+                cmd.Parameters.AddWithValue("@area", curso.area_curso);
+                cmd.Parameters.AddWithValue("@status", curso.status_curso);
+
+                cmd.ExecuteNonQuery();
+                vcon.Close();
+                MessageBox.Show("Novo curso adicionado com sucesso");
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao inserir novo curso .: " + ex.Message);
+                //throw ex;
+            }
+        }
     }
 
     //fim das funções genéricas

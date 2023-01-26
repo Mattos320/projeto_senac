@@ -56,5 +56,11 @@ namespace ProjetoEscola2
             F_NewUser f_newuser = new F_NewUser(this);
             f_newuser.ShowDialog();
         }
+
+        private void novoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            F_Curso F_curso = new F_Curso(this);
+            F_curso.ShowDialog();
+        }
     }
 }
