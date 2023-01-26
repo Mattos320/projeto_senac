@@ -91,7 +91,14 @@
     <Compile Include="F_NewUser.Designer.cs">
       <DependentUpon>F_NewUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_Professor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Professor.Designer.cs">
+      <DependentUpon>F_Professor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Globais.cs" />
+    <Compile Include="Professor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.cs" />
@@ -106,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F_NewUser.resx">
       <DependentUpon>F_NewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Professor.resx">
+      <DependentUpon>F_Professor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

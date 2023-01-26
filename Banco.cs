@@ -41,11 +41,11 @@ namespace ProjetoEscola2
 
             catch (Exception ex)
             {
-                throw  ex;
+                throw ex;
             }
         } // metodo generico para consultas no BD
 
-        public static DataTable ConsultaSql (string sql)
+        public static DataTable ConsultaSql(string sql)
         {
             SQLiteDataAdapter da = null;
             DataTable dt = new DataTable();
@@ -130,8 +130,8 @@ namespace ProjetoEscola2
                 //throw ex;
             }
 
-            
-    }
+
+        }
         public static bool UsernameExiste(Usuario user)
         {
             bool resposta;
@@ -143,7 +143,7 @@ namespace ProjetoEscola2
             cmd.CommandText = "SELECT username_usuario FROM tb_usuario WHERE username_usuario='" + user.username_usuario + "'";
             da = new SQLiteDataAdapter(cmd.CommandText, vcon);
             da.Fill(dt);
-            if(dt.Rows.Count > 0 )
+            if (dt.Rows.Count > 0)
             {
                 resposta = true;
             }
@@ -182,13 +182,40 @@ namespace ProjetoEscola2
                 //throw ex;
             }
         }
+        public static void NovoProfessor(Professor professor)
+        {
+
+
+            try
+            {
+                var vcon = ConectarBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "INSERT INTO tb_professor (nome_professor,telefone_professor,turno_professor) VALUES (@nome,@telefone,@turno)";
+
+
+                cmd.Parameters.AddWithValue("@nome", professor.nome_professor);
+                cmd.Parameters.AddWithValue("@telefone", professor.telefone_professor);
+                cmd.Parameters.AddWithValue("@turno", professor.turno_professor);
+
+                cmd.ExecuteNonQuery();
+                vcon.Close();
+                MessageBox.Show("Novo professor adicionado com sucesso");
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao inserir novo professor .: " + ex.Message);
+                //throw ex;
+            }
+        }
+
+        //fim das funções genéricas
+
+
+
+
     }
-
-    //fim das funções genéricas
-
-
-
-
 }
 
 
