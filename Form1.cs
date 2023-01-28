@@ -53,7 +53,7 @@ namespace ProjetoEscola2
 
         private void novoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            F_NewUser f_newuser = new F_NewUser(this);
+            F_NewUser f_newuser = new F_NewUser();
             f_newuser.ShowDialog();
         }
 
@@ -78,6 +78,12 @@ namespace ProjetoEscola2
         {
             F_Aluno F_aluno = new F_Aluno(this);
             F_aluno.ShowDialog();
+        }
+
+        private void gerenciamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_GerenciamentodeUsuarios F_gerenciamentousuario = new F_GerenciamentodeUsuarios(this);
+            F_gerenciamentousuario.ShowDialog();
         }
     }
 }

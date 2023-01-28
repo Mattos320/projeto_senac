@@ -12,14 +12,14 @@ namespace ProjetoEscola2
 {
     public partial class F_NewUser : Form
     {
-        F_escola F_newuser;
-        DataTable dt = new DataTable();
+ 
 
-        public F_NewUser(F_escola f)
+        public F_NewUser()
         {
             InitializeComponent();
-            F_newuser = f;
+
         }
+       
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
