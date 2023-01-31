@@ -296,7 +296,7 @@ namespace ProjetoEscola2
 
 
         }
-        public static DataTable ObterUserID() 
+        public static DataTable ObterUserID()
         {
 
             SQLiteDataAdapter da = null;
@@ -311,17 +311,86 @@ namespace ProjetoEscola2
                 da.Fill(dt);
                 vcon.Close();
                 return dt;
-               
+
             }
-             catch (Exception ex){
+            catch (Exception ex)
+            {
                 throw ex;
             }
 
         }
-      
 
+        public static DataTable ObterDadosPorId(string id)
+        {
+
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+
+                var vcon = ConectarBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "SELECT * FROM tb_usuario WHERE id_usuario=" + id;
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                da.Fill(dt);
+                vcon.Close();
+                return dt;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        public static DataTable AtualizarUsuario(Usuario user)
+        {
+
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+
+                var vcon = ConectarBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "UPDATE tb_usuario SET nome_usuario='" + user.nome_usuario + "',username_usuario='" + user.username_usuario + "',senha_usuario='" + user.senha_usuario + "',status_usuario='" + user.status_usuario + "',nivel_usuario=" + user.nivel_usuario + " WHERE id_usuario=" + user.id_usuario;
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                da.Fill(dt);
+                vcon.Close();
+                return dt;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        public static void RemoverUsuario(string id)
+        {
+
+            SQLiteDataAdapter da = null;
+            //DataTable dt = new DataTable();
+            try
+            {
+
+                var vcon = ConectarBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "DELETE FROM tb_usuario WHERE id_usuario=" + id;
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                cmd.ExecuteNonQuery();
+                vcon.Close();
+                
+
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
     }
-
 }
 
 
