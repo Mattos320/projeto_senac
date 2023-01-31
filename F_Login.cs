@@ -71,7 +71,7 @@ namespace ProjetoEscola2
             dt = Banco.ConsultaSql(sql);
             if (dt.Rows.Count == 1)
             {
-                F_login.label2.Text = dt.Rows[0].ItemArray[0].ToString();
+                F_login.lb_nivel.Text = dt.Rows[0].ItemArray[0].ToString();
                 F_login.lb_Usuario.Text = dt.Rows[0].Field<string>("username_usuario");
                 F_login.pb_login.Image = Properties.Resources.bverde;
 
