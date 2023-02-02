@@ -39,10 +39,13 @@
             this.visualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alunosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestãoDeProfessoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestãoDeCursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alunosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.novoToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestãoDeAlunosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lb_nivel = new System.Windows.Forms.Label();
             this.pb_login = new System.Windows.Forms.PictureBox();
@@ -131,7 +134,8 @@
             // alunosToolStripMenuItem
             // 
             this.alunosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.novoToolStripMenuItem2});
+            this.novoToolStripMenuItem2,
+            this.gestãoDeProfessoresToolStripMenuItem});
             this.alunosToolStripMenuItem.Name = "alunosToolStripMenuItem";
             this.alunosToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.alunosToolStripMenuItem.Text = "Professores";
@@ -140,14 +144,22 @@
             // novoToolStripMenuItem2
             // 
             this.novoToolStripMenuItem2.Name = "novoToolStripMenuItem2";
-            this.novoToolStripMenuItem2.Size = new System.Drawing.Size(103, 22);
+            this.novoToolStripMenuItem2.Size = new System.Drawing.Size(189, 22);
             this.novoToolStripMenuItem2.Text = "Novo";
             this.novoToolStripMenuItem2.Click += new System.EventHandler(this.novoToolStripMenuItem2_Click);
+            // 
+            // gestãoDeProfessoresToolStripMenuItem
+            // 
+            this.gestãoDeProfessoresToolStripMenuItem.Name = "gestãoDeProfessoresToolStripMenuItem";
+            this.gestãoDeProfessoresToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.gestãoDeProfessoresToolStripMenuItem.Text = "Gestão de Professores";
+            this.gestãoDeProfessoresToolStripMenuItem.Click += new System.EventHandler(this.gestãoDeProfessoresToolStripMenuItem_Click);
             // 
             // cursosToolStripMenuItem
             // 
             this.cursosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.novoToolStripMenuItem1});
+            this.novoToolStripMenuItem1,
+            this.gestãoDeCursosToolStripMenuItem});
             this.cursosToolStripMenuItem.Name = "cursosToolStripMenuItem";
             this.cursosToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.cursosToolStripMenuItem.Text = "Cursos";
@@ -155,14 +167,22 @@
             // novoToolStripMenuItem1
             // 
             this.novoToolStripMenuItem1.Name = "novoToolStripMenuItem1";
-            this.novoToolStripMenuItem1.Size = new System.Drawing.Size(106, 22);
+            this.novoToolStripMenuItem1.Size = new System.Drawing.Size(165, 22);
             this.novoToolStripMenuItem1.Text = "Novo ";
             this.novoToolStripMenuItem1.Click += new System.EventHandler(this.novoToolStripMenuItem1_Click);
+            // 
+            // gestãoDeCursosToolStripMenuItem
+            // 
+            this.gestãoDeCursosToolStripMenuItem.Name = "gestãoDeCursosToolStripMenuItem";
+            this.gestãoDeCursosToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.gestãoDeCursosToolStripMenuItem.Text = "Gestão de Cursos";
+            this.gestãoDeCursosToolStripMenuItem.Click += new System.EventHandler(this.gestãoDeCursosToolStripMenuItem_Click);
             // 
             // alunosToolStripMenuItem1
             // 
             this.alunosToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.novoToolStripMenuItem3});
+            this.novoToolStripMenuItem3,
+            this.gestãoDeAlunosToolStripMenuItem});
             this.alunosToolStripMenuItem1.Name = "alunosToolStripMenuItem1";
             this.alunosToolStripMenuItem1.Size = new System.Drawing.Size(56, 20);
             this.alunosToolStripMenuItem1.Text = "Alunos";
@@ -170,9 +190,16 @@
             // novoToolStripMenuItem3
             // 
             this.novoToolStripMenuItem3.Name = "novoToolStripMenuItem3";
-            this.novoToolStripMenuItem3.Size = new System.Drawing.Size(103, 22);
+            this.novoToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.novoToolStripMenuItem3.Text = "Novo";
             this.novoToolStripMenuItem3.Click += new System.EventHandler(this.novoToolStripMenuItem3_Click);
+            // 
+            // gestãoDeAlunosToolStripMenuItem
+            // 
+            this.gestãoDeAlunosToolStripMenuItem.Name = "gestãoDeAlunosToolStripMenuItem";
+            this.gestãoDeAlunosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestãoDeAlunosToolStripMenuItem.Text = "Gestão de Alunos";
+            this.gestãoDeAlunosToolStripMenuItem.Click += new System.EventHandler(this.gestãoDeAlunosToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -282,6 +309,9 @@
         public System.Windows.Forms.PictureBox pb_login;
         private System.Windows.Forms.ToolStripMenuItem alunosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem novoToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem gestãoDeProfessoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestãoDeCursosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestãoDeAlunosToolStripMenuItem;
     }
 }
 

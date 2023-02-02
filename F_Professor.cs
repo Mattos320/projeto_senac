@@ -12,14 +12,11 @@ namespace ProjetoEscola2
 {
     public partial class F_Professor : Form
     {
-        F_escola F_professor;
-        DataTable dt = new DataTable();
 
-
-        public F_Professor(F_escola f)
+        public F_Professor()
         {
             InitializeComponent();
-            F_professor = f;
+
         }
 
         private void bt_limpar_Click(object sender, EventArgs e)
@@ -41,6 +38,11 @@ namespace ProjetoEscola2
             professor.telefone_professor = tb_tel.Text;
             professor.turno_professor = tb_turno.Text;
             Banco.NovoProfessor(professor);
+        }
+
+        private void tb_nome_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

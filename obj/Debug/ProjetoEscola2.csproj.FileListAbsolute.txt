@@ -24,3 +24,6 @@ C:\Users\lucas.smattos1\source\repos\ProjetoEscola2\obj\Debug\ProjetoEscola2.F_C
 C:\Users\lucas.smattos1\source\repos\ProjetoEscola2\obj\Debug\ProjetoEscola2.F_Professor.resources
 C:\Users\lucas.smattos1\source\repos\ProjetoEscola2\obj\Debug\ProjetoEscola2.F_Aluno.resources
 C:\Users\lucas.smattos1\source\repos\ProjetoEscola2\obj\Debug\ProjetoEscola2.F_GerenciamentodeUsuarios.resources
+C:\Users\lucas.smattos1\source\repos\ProjetoEscola2\obj\Debug\ProjetoEscola2.F_GerenciamentoProfessor.resources
+C:\Users\lucas.smattos1\source\repos\ProjetoEscola2\obj\Debug\ProjetoEscola2.F_GerenciamentoCurso.resources
+C:\Users\lucas.smattos1\source\repos\ProjetoEscola2\obj\Debug\ProjetoEscola2.F_GerenciamentoAluno.resources

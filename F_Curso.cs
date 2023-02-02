@@ -12,13 +12,12 @@ namespace ProjetoEscola2
 {
     public partial class F_Curso: Form
     {
-        F_escola F_curso;
-        DataTable dt = new DataTable();
+       
 
-        public F_Curso(F_escola f)
+        public F_Curso()
         {
             InitializeComponent();
-            F_curso = f;
+            
         }
 
         private void bt_fechar_Click(object sender, EventArgs e)
@@ -40,6 +39,11 @@ namespace ProjetoEscola2
             curso.area_curso = tb_curso.Text;
             curso.status_curso = cb_status.Text;
             Banco.NovoCurso(curso);
+        }
+
+        private void tb_acurso_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

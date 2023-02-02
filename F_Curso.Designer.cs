@@ -54,6 +54,7 @@
             this.tb_acurso.Name = "tb_acurso";
             this.tb_acurso.Size = new System.Drawing.Size(265, 25);
             this.tb_acurso.TabIndex = 1;
+            this.tb_acurso.TextChanged += new System.EventHandler(this.tb_acurso_TextChanged);
             // 
             // label1
             // 

@@ -46,6 +46,7 @@
             this.tb_nome.Name = "tb_nome";
             this.tb_nome.Size = new System.Drawing.Size(257, 31);
             this.tb_nome.TabIndex = 0;
+            this.tb_nome.TextChanged += new System.EventHandler(this.tb_nome_TextChanged);
             // 
             // tb_tel
             // 
@@ -78,9 +79,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(25, 205);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Turno";
+            this.label3.Text = "Turno:";
             // 
             // bt_limpar
             // 

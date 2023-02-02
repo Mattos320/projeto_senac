@@ -12,13 +12,11 @@ namespace ProjetoEscola2
 {
     public partial class F_Aluno : Form
     {
-        F_escola F_aluno;
-        DataTable dt = new DataTable();
 
-        public F_Aluno(F_escola f)
+        public F_Aluno()
         {
             InitializeComponent();
-            F_aluno = f;
+
         }
 
         private void bt_fechar_Click(object sender, EventArgs e)
@@ -40,6 +38,11 @@ namespace ProjetoEscola2
             aluno.sobrenome_aluno = tb_sobrenome.Text;
             aluno.telefone_aluno = tb_tel.Text;
             Banco.NovoAluno(aluno);
+        }
+
+        private void tb_tel_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

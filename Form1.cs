@@ -83,7 +83,7 @@ namespace ProjetoEscola2
 
         private void novoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            F_Curso F_curso = new F_Curso(this);
+            F_Curso F_curso = new F_Curso();
             F_curso.ShowDialog();
         }
 
@@ -94,25 +94,44 @@ namespace ProjetoEscola2
 
         private void novoToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            F_Professor F_professor = new F_Professor(this);
+            F_Professor F_professor = new F_Professor();
             F_professor.ShowDialog();
         }
 
         private void novoToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            F_Aluno F_aluno = new F_Aluno(this);
+            F_Aluno F_aluno = new F_Aluno();
             F_aluno.ShowDialog();
         }
 
         private void gerenciamentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            F_GerenciamentodeUsuarios F_gerenciamentousuario = new F_GerenciamentodeUsuarios(this);
+            F_GerenciamentodeUsuarios F_gerenciamentousuario = new F_GerenciamentodeUsuarios();
             F_gerenciamentousuario.ShowDialog();
         }
 
         private void lb_nivel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void gestãoDeProfessoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_GerenciamentoProfessor F_gerenciamentoprofessor = new F_GerenciamentoProfessor();
+            F_gerenciamentoprofessor.ShowDialog();
+
+        }
+
+        private void gestãoDeCursosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_GerenciamentoCurso f_gerenciamentocurso = new F_GerenciamentoCurso();
+            f_gerenciamentocurso.ShowDialog();
+        }
+
+        private void gestãoDeAlunosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_GerenciamentoAluno f_gerenciamentoaluno = new F_GerenciamentoAluno();
+            f_gerenciamentoaluno.ShowDialog();
         }
     }
 }

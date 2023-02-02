@@ -86,11 +86,29 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_GerenciamentoAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_GerenciamentoAluno.Designer.cs">
+      <DependentUpon>F_GerenciamentoAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_GerenciamentoCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_GerenciamentoCurso.Designer.cs">
+      <DependentUpon>F_GerenciamentoCurso.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_GerenciamentodeUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="F_GerenciamentodeUsuarios.Designer.cs">
       <DependentUpon>F_GerenciamentodeUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_GerenciamentoProfessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_GerenciamentoProfessor.Designer.cs">
+      <DependentUpon>F_GerenciamentoProfessor.cs</DependentUpon>
     </Compile>
     <Compile Include="F_Login.cs">
       <SubType>Form</SubType>
@@ -124,8 +142,17 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="F_GerenciamentoAluno.resx">
+      <DependentUpon>F_GerenciamentoAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_GerenciamentoCurso.resx">
+      <DependentUpon>F_GerenciamentoCurso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_GerenciamentodeUsuarios.resx">
       <DependentUpon>F_GerenciamentodeUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_GerenciamentoProfessor.resx">
+      <DependentUpon>F_GerenciamentoProfessor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_Login.resx">
       <DependentUpon>F_Login.cs</DependentUpon>

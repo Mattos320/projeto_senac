@@ -12,13 +12,11 @@ namespace ProjetoEscola2
 {
     public partial class F_GerenciamentodeUsuarios : Form
     {
-        F_escola F_gerenciamentousuario;
-        DataTable dt = new DataTable();
-
-        public F_GerenciamentodeUsuarios(F_escola f)
+        
+        public F_GerenciamentodeUsuarios()
         {
             InitializeComponent();
-            F_gerenciamentousuario = f;
+           
         }
 
         private void bt_limpar_Click(object sender, EventArgs e)
@@ -31,12 +29,13 @@ namespace ProjetoEscola2
             user.username_usuario = tb_username.Text;
             user.senha_usuario = tb_senha.Text;
             user.status_usuario = cb_status.Text;
-            user.nivel_usuario = Convert.ToInt32(Math.Round(num_nivel.Value,0));
-
+            user.nivel_usuario = Convert.ToInt32(Math.Round(num_nivel.Value, 0));
+            
+                
             Banco.AtualizarUsuario(user);
 
 
-            dgv_usuario[1,linha].Value = tb_nome.Text;
+            dgv_usuario[1, linha].Value = tb_nome.Text;
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
