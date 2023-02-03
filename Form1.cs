@@ -38,7 +38,7 @@ namespace ProjetoEscola2
 
                 lb_Usuario.Text = "--";
 
-                pb_login.Image = Properties.Resources.bvermelha;
+                pb_login.Image = Properties.Resources.bamarela;
 
                 Globais.nivel = 0;
                 Globais.logado = false;
@@ -126,6 +126,7 @@ namespace ProjetoEscola2
         {
             F_GerenciamentoCurso f_gerenciamentocurso = new F_GerenciamentoCurso();
             f_gerenciamentocurso.ShowDialog();
+            
         }
 
         private void gestãoDeAlunosToolStripMenuItem_Click(object sender, EventArgs e)

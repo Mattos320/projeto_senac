@@ -36,7 +36,7 @@ namespace ProjetoEscola2
         {
             Curso curso = new Curso();
             curso.nome_curso = tb_curso.Text;
-            curso.area_curso = tb_curso.Text;
+            curso.area_curso = tb_acurso.Text;
             curso.status_curso = cb_status.Text;
             Banco.NovoCurso(curso);
         }

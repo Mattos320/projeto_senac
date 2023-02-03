@@ -64,8 +64,8 @@ namespace ProjetoEscola2
 
         private void bt_novo_Click(object sender, EventArgs e)
         {
-            F_GerenciamentoCurso f_gerenciamentocurso = new F_GerenciamentoCurso();
-            f_gerenciamentocurso.ShowDialog();
+            F_Curso F_curso = new F_Curso();
+            F_curso.ShowDialog();
             dgv_curso.DataSource = Banco.ObterUserIDCurso();
         }
 
