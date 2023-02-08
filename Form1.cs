@@ -134,5 +134,29 @@ namespace ProjetoEscola2
             F_GerenciamentoAluno f_gerenciamentoaluno = new F_GerenciamentoAluno();
             f_gerenciamentoaluno.ShowDialog();
         }
+
+        private void gestãoDeTurmasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_GerenciamentoTurma f_gerenciamentoturma = new F_GerenciamentoTurma();
+            f_gerenciamentoturma.ShowDialog();
+        }
+
+        private void novoToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            F_Turma F_turma = new F_Turma();
+            F_turma.ShowDialog();
+        }
+
+        private void novoToolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            F_Horario F_horario = new F_Horario();
+            F_horario.ShowDialog();
+        }
+
+        private void gestãoDeHoráriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_GerenciamentoHorario f_gerenciamentohorario = new F_GerenciamentoHorario();
+            f_gerenciamentohorario.ShowDialog();
+        }
     }
 }

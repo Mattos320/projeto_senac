@@ -663,5 +663,276 @@ namespace ProjetoEscola2
             }
         }
 
+        public static void NovaTurma(Turma turma)
+        {
+
+
+            try
+            {
+                var vcon = ConectarBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "INSERT INTO tb_turma (id_prof_turma,id_horario_turma,max_alunos_turma,status_turma,id_curso_turma) VALUES (@id_prof,@id_horario,@max_alunos,@status,@id_curso)";
+
+
+                cmd.Parameters.AddWithValue("@id_prof", turma.id_prof_turma);
+                cmd.Parameters.AddWithValue("@id_horario", turma.id_horario_turma);
+                cmd.Parameters.AddWithValue("@max_alunos", turma.max_alunos_turma);
+                cmd.Parameters.AddWithValue("@status", turma.status_turma);
+                cmd.Parameters.AddWithValue("@id_curso", turma.id_curso_turma);
+
+                cmd.ExecuteNonQuery();
+                vcon.Close();
+                MessageBox.Show("Nova Turma adicionada com sucesso");
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao inserir nova turma .: " + ex.Message);
+                //throw ex;
+            }
+        }
+        public static DataTable ObterTurmaID()
+        {
+
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+
+                var vcon = ConectarBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "SELECT id_turma AS ID, id_prof_turma AS ID_PROF, id_horario_turma AS ID_HORA, max_alunos_turma AS QTD_ALUNO, status_turma AS STATUS, id_curso_turma AS ID_CURSO FROM tb_turma";
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                da.Fill(dt);
+                vcon.Close();
+                return dt;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        public static DataTable AtualizarTurma(Turma turma)
+        {
+
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+
+                var vcon = ConectarBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "UPDATE tb_turma SET id_prof_turma='" + turma.id_prof_turma + "',id_horario_turma='" + turma.id_horario_turma + "',max_alunos_turma='" + turma.max_alunos_turma + "',status_turma='" + turma.status_turma + "',id_curso_turma=" + turma.id_curso_turma + " WHERE id_turma=" + turma.id_turma;
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                da.Fill(dt);
+                vcon.Close();
+                return dt;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        public static void RemoverTurma(string id)
+        {
+
+            SQLiteDataAdapter da = null;
+            //DataTable dt = new DataTable();
+            try
+            {
+
+                var vcon = ConectarBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "DELETE FROM tb_turma WHERE id_turma=" + id;
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                cmd.ExecuteNonQuery();
+                vcon.Close();
+
+
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        public static DataTable ObterDadosPorIdTurma(string id)
+        {
+
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+
+                var vcon = ConectarBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "SELECT * FROM tb_turma WHERE id_turma=" + id;
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                da.Fill(dt);
+                vcon.Close();
+                return dt;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        public static void NovoHorario(Horario horario)
+        {
+            try
+            {
+                var vcon = ConectarBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "INSERT INTO tb_horario (descricao_horario) VALUES (@descricao)";
+
+
+                cmd.Parameters.AddWithValue("@descricao", horario.descricao_horario);
+
+
+                cmd.ExecuteNonQuery();
+                vcon.Close();
+                MessageBox.Show("Novo horário adicionado com sucesso");
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao inserir novo horário .: " + ex.Message);
+                //throw ex;
+            }
+        }
+        public static DataTable ObterHorarioID()
+        {
+
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+
+                var vcon = ConectarBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "SELECT id_horario AS ID, descricao_horario AS Horário FROM tb_horario";
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                da.Fill(dt);
+                vcon.Close();
+                return dt;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        public static DataTable AtualizarHorario(Horario horario)
+        {
+
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+
+                var vcon = ConectarBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "UPDATE tb_horario SET descricao_horario='" + horario.descricao_horario + "' WHERE id_horario=" + horario.id_horario;
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                da.Fill(dt);
+                vcon.Close();
+                return dt;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        public static void RemoverHorario(string id)
+        {
+
+            SQLiteDataAdapter da = null;
+            //DataTable dt = new DataTable();
+            try
+            {
+
+                var vcon = ConectarBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "DELETE FROM tb_horario WHERE id_horario=" + id;
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                cmd.ExecuteNonQuery();
+                vcon.Close();
+
+
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public static DataTable ObterHorarioPorId(string id)
+        {
+
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+
+                var vcon = ConectarBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "SELECT * FROM tb_horario WHERE id_horario=" + id;
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                da.Fill(dt);
+                vcon.Close();
+                return dt;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        } // fim 
+
+
+
+
+        public static DataTable Dql(string sql) {
+
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+
+                var vcon = ConectarBanco();
+                var cmd = vcon.CreateCommand();
+                {
+                    cmd.CommandText = sql;
+                    da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                    da.Fill(dt);
+                    vcon.Close();
+                    return dt;
+
+                }
+      
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
+        }
+
+
     }
 }
+
